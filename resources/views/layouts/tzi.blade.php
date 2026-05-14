@@ -5,202 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title', 'PT Teknokrat Zamrud Integrasi')</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/logo-dark.png') }}" />
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="icon" type="image/webp" href="{{ asset('assets/img/logo-dark.webp') }}" />
     <meta name="description"
-        content="Deskripsi singkat mengenai layanan atau produk yang ditawarkan oleh Teknokrat Zamrud.">
-    <meta name="keywords" content="teknokrat, zamrud, integration, software house, riau">
-
-    <!-- Open Graph untuk Social Media (WhatsApp/Facebook) -->
+        content="PT Teknokrat Zamrud Integrasi adalah Penyedia dan instalasi produk Elektronika, Kelistrikan, Teknologi Informatika, Audio Video, Dekorasi Interior, Furnitur & Alat Tulis Kantor.">
+    <meta name="keywords" content="teknokrat, zamrud, integration, riau">
     <meta property="og:title" content="Teknokrat Zamrud Integration">
     <meta property="og:description" content="Solusi integrasi sistem untuk kebutuhan bisnis Anda.">
-    <meta property="og:image" content="https://teknokratzamrud.com/logo.png">
-    <meta property="og:url" content="https://teknokratzamrud.com/">
+    <meta property="og:image" content="{{ asset('assets/img/logo-dark.webp') }}">
+    <meta property="og:url" content="{{ route('tzi.home') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Fira+Sans:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <style>
-        body {
-            font-family: 'Fira Sans', sans-serif;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-family: 'Barlow Condensed', sans-serif;
-        }
-
-        .hero-bg {
-            position: relative;
-            background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('{{ asset('assets/img/hero-bg.png') }}');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .service-bg {
-            position: relative;
-            background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('{{ asset('assets/img/service-hero.png') }}');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .about-bg {
-            position: relative;
-            background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('{{ asset('assets/img/bg-image.png') }}');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .contact-bg {
-            position: relative;
-            background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('{{ asset('assets/img/contact_hero.png') }}');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .product-bg {
-            position: relative;
-            background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('{{ asset('assets/img/products-hero.png') }}');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .bg-tzi {
-            position: relative;
-            background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('{{ asset('assets/img/bg-image.png') }}');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .footer-bg {
-            position: relative;
-            background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('{{ asset('assets/img/bg-image.png') }}');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .custom-shape-divider-bottom-1715243168 {
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-        }
-
-        .custom-shape-divider-bottom-1715243168 svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 80px;
-        }
-
-        .custom-shape-divider-bottom-1715243168 .shape-fill {
-            fill: #FFFFFF;
-        }
-
-        .service-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.18);
-            border-color: #3b82f6;
-        }
-
-        .service-card:hover .card-img {
-            transform: scale(1.07);
-        }
-
-        .card-img {
-            transition: transform 0.5s ease;
-        }
-
-        .why-card {
-            transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
-        }
-
-        .why-card:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.14);
-            transform: translateY(-4px);
-        }
-
-        .btn-transition {
-            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-        }
-
-        .btn-transition:hover {
-            transform: translateY(-2px);
-        }
-
-        .nav-link {
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #3b99f6;
-            transition: width 0.25s;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .read-more {
-            transition: gap 0.2s, color 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .read-more:hover {
-            gap: 10px;
-            color: #1d4ed8;
-        }
-
-        .feature-row {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-        }
-
-        .feature-row:last-child {
-            border-bottom: none;
-        }
-
-        .custom-shape-divider-top-1715243168 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-        }
-
-        .custom-shape-divider-top-1715243168 svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 60px;
-        }
-
-        .custom-shape-divider-top-1715243168 .shape-fill {
-            fill: #FFFFFF;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}" />
     @stack('styles')
 </head>
 
@@ -210,8 +30,8 @@
     <nav class="fixed top-0 left-0 w-full z-50 bg-[#0a1628]/95 backdrop-blur-md border-b border-sky-900/40">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="{{ route('tzi.home') }}" class="flex items-center gap-2.5">
-                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <img src="{{ asset('assets/img/logo.png') }}" alt="">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center shrink-0">
+                    <img src="{{ asset('assets/img/logo.webp') }}" alt="">
                 </div>
                 <div class="leading-tight uppercase">
                     <p class="text-white text-sm font-bold tracking-wide text-center">Teknokrat</p>
@@ -255,12 +75,12 @@
 
     <!-- ── MOBILE MENU ── -->
     <div id="mobile-menu"
-        class="fixed inset-0 z-[60] bg-[#0a1628] translate-x-full transition-transform duration-300 md:hidden overflow-y-auto">
+        class="fixed inset-0 z-60 bg-[#0a1628] translate-x-full transition-transform duration-300 md:hidden overflow-y-auto">
         <div class="p-8">
             <div class="flex items-center justify-between mb-16">
                 <a href="{{ route('tzi.home') }}" class="flex items-center gap-2.5 text-left">
                     <div class="w-12 h-12 rounded-xl flex items-center justify-center">
-                        <img src="{{ asset('assets/img/logo.png') }}" alt="">
+                        <img src="{{ asset('assets/img/logo.webp') }}" alt="">
                     </div>
                     <div class="leading-tight uppercase">
                         <p class="text-white text-base font-bold tracking-wide text-center">Teknokrat</p>
@@ -349,7 +169,7 @@
                 <div class="md:col-span-1">
                     <a href="{{ route('tzi.home') }}" class="flex items-center gap-3 mb-6">
                         <div class="w-12 h-12 rounded-xl flex items-center justify-center">
-                            <img src="{{ asset('assets/img/logo.png') }}" alt="">
+                            <img src="{{ asset('assets/img/logo.webp') }}" alt="">
                         </div>
                         <div class="leading-tight uppercase">
                             <p class="text-white text-sm font-bold tracking-wide">Teknokrat</p>
@@ -423,7 +243,8 @@
             <div
                 class="pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-[10px] font-bold uppercase tracking-[0.15em]">
                 <p>© {{ date('Y') }} PT. Teknokrat Zamrud Integrasi.
-                    {{ __('Didirikan Maret 2023, Pekanbaru. All rights reserved.') }}</p>
+                    {{ __('Didirikan Maret 2023, Pekanbaru. All rights reserved.') }}
+                </p>
                 <div class="flex gap-6">
                     <a href="{{ route('tzi.home') }}" class="hover:text-white transition-colors">{{ __('Beranda') }}</a>
                     <a href="{{ route('tzi.contact') }}"
@@ -433,8 +254,9 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{{ asset('assets/js/aos.js') }}"></script>
+    <script src="{{ asset('assets/js/iconify-icon.min.js') }}"></script>
+    <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
     <script>
         AOS.init({ duration: 900, once: true, offset: 80 });
 

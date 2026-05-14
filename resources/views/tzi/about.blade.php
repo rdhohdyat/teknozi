@@ -1,6 +1,8 @@
 @extends('layouts.tzi')
 
 @section('title', __('Tentang Kami - PT Teknokrat Zamrud Integrasi'))
+@section('meta_description', __('Pelajari lebih lanjut tentang profil, visi, dan misi PT Teknokrat Zamrud Integrasi. Sebagai perusahaan penyedia solusi terintegrasi, kami berkomitmen memberikan layanan unggul dan profesional sejak 2023.'))
+@section('meta_keywords', __('profil PT Teknokrat Zamrud Integrasi, tentang teknokrat zamrud, perusahaan IT pekanbaru, kontraktor interior pekanbaru, sejarah teknokrat zamrud integrasi'))
 
 @section('content')
     <!-- ── PAGE HERO ── -->
@@ -42,7 +44,7 @@
                         {{ __('Sejak Maret 2023') }}
                     </div>
                     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5">
-                        <img class="w-20 md:w-28" src="{{ asset('assets/img/logo-dark.png') }}" alt="TZI Logo">
+                        <img class="w-20 md:w-28" src="{{ asset('assets/img/logo-dark.webp') }}" alt="TZI Logo">
                         <h2
                             class="text-3xl md:text-4xl font-black uppercase text-slate-900 mb-6 leading-tight text-center sm:text-left">
                             {{ __('PROFIL') }} <br>
@@ -89,18 +91,18 @@
 
                     <!-- Main Image Frame -->
                     <div
-                        class="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-900/20 border border-white/50 bg-slate-100">
+                        class="relative rounded-4xl overflow-hidden shadow-2xl shadow-slate-900/20 border border-white/50 bg-slate-100">
                         <!-- Gradient overlay at bottom -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent z-10">
+                            class="absolute inset-0 bg-linear-to-t from-slate-900/70 via-transparent to-transparent z-10">
                         </div>
                         <!-- Gradient overlay on left edge -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-r from-slate-900/20 via-transparent to-transparent z-10">
+                            class="absolute inset-0 bg-linear-to-r from-slate-900/20 via-transparent to-transparent z-10">
                         </div>
 
-                        <img src="{{ asset('assets/img/kantor-teknokrat-zamrud.png') }}" alt="Kantor PT Teknokrat Zamrud Integrasi"
-                            class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700">
+                        <img src="{{ asset('assets/img/kantor-teknokrat-zamrud.webp') }}" alt="Kantor PT Teknokrat Zamrud Integrasi"
+                            class="w-full h-full object-cover aspect-4/3 group-hover:scale-105 transition-transform duration-700">
 
                         <!-- Bottom overlay content -->
                         <div class="absolute bottom-0 left-0 right-0 z-20 p-6">
@@ -174,7 +176,7 @@
                     <div class="relative rounded-[2rem] overflow-hidden group cursor-default h-[420px] shadow-xl"
                         data-aos="fade-up" data-aos-delay="0">
                         <!-- Background image -->
-                        <img src="{{ asset('assets/img/pasang_ac.png') }}" alt="Teknokrat"
+                        <img src="{{ asset('assets/img/pasang_ac.webp') }}" alt="Teknokrat"
                             class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110">
                         <!-- Gradient overlay -->
                         <div
@@ -209,7 +211,7 @@
                     <!-- Zamrud -->
                     <div class="relative rounded-[2rem] overflow-hidden group cursor-default h-[420px] shadow-xl"
                         data-aos="fade-up" data-aos-delay="100">
-                        <img src="{{ asset('assets/img/cctv.png') }}" alt="Zamrud"
+                        <img src="{{ asset('assets/img/cctv.webp') }}" alt="Zamrud"
                             class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20 transition-all duration-500 group-hover:from-sky-950 group-hover:via-slate-900/70 group-hover:to-slate-900/30">
@@ -240,7 +242,7 @@
                     <!-- Integrasi -->
                     <div class="relative rounded-[2rem] overflow-hidden group cursor-default h-[420px] shadow-xl"
                         data-aos="fade-up" data-aos-delay="200">
-                        <img src="{{ asset('assets/img/listrik.png') }}" alt="Integrasi"
+                        <img src="{{ asset('assets/img/listrik.webp') }}" alt="Integrasi"
                             class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20 transition-all duration-500 group-hover:from-sky-900 group-hover:via-slate-900/70 group-hover:to-slate-900/30">
@@ -284,7 +286,7 @@
                 <div class="relative rounded-[2.5rem] overflow-hidden mb-12 shadow-2xl min-h-[360px] md:min-h-[420px] group"
                     data-aos="fade-up">
                     <!-- Full bleed background image -->
-                    <img src="{{ asset('assets/img/vision.png') }}" alt="Visi PT Teknokrat Zamrud Integrasi"
+                    <img src="{{ asset('assets/img/vision.webp') }}" alt="Visi PT Teknokrat Zamrud Integrasi"
                         class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
 
                     <!-- Gradient overlay: dark from left, fading right -->
@@ -553,7 +555,7 @@
                 <!-- Section Header -->
                 <div class="relative bg-slate-900 py-16 px-10 overflow-hidden">
                     <div class="absolute inset-0 opacity-20">
-                        <img src="{{ asset('assets/img/bg-logo.png') }}" alt="Law Theme" class="w-full h-full object-cover">
+                        <img src="{{ asset('assets/img/bg-logo.webp') }}" alt="Law Theme" class="w-full h-full object-cover">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent">
                     </div>

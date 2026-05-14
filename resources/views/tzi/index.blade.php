@@ -1,6 +1,8 @@
 @extends('layouts.tzi')
 
-@section('title', __('PT Teknokrat Zamrud Integrasi - Beranda'))
+@section('title', __('Beranda - PT Teknokrat Zamrud Integrasi'))
+@section('meta_description', __('Selamat datang di situs resmi PT Teknokrat Zamrud Integrasi. Kami menyediakan solusi terbaik untuk instalasi IT, Elektronika, Sistem HVAC (Pendingin), Desain Interior, dan Pengadaan Furnitur Kantor di Pekanbaru, Riau.'))
+@section('meta_keywords', __('teknokrat, zamrud integrasi, instalasi IT pekanbaru, kontraktor HVAC riau, desain interior kantor pekanbaru, supplier elektronik riau, pengadaan atk pekanbaru'))
 
 @section('content')
     <!-- ── HERO ── -->
@@ -79,11 +81,11 @@
             <!-- Image collage -->
             <div class="relative" data-aos="fade-right">
                 <div class="grid grid-cols-2 gap-2">
-                    <img src="{{ asset('assets/img/pasang_ac.png') }}" alt="Modern Office Technology"
+                    <img src="{{ asset('assets/img/pasang_ac.webp') }}" alt="Modern Office Technology"
                         class="rounded-xl h-52 w-full object-cover col-span-2 shadow-md" />
-                    <img src="{{ asset('assets/img/listrik.png') }}" alt="Instalasi Elektronika Kelistrikan"
+                    <img src="{{ asset('assets/img/listrik.webp') }}" alt="Instalasi Elektronika Kelistrikan"
                         class="rounded-xl h-44 w-full object-cover shadow-md" />
-                    <img src="{{ asset('assets/img/cctv.png') }}" alt="Audio Video System"
+                    <img src="{{ asset('assets/img/cctv.webp') }}" alt="Audio Video System"
                         class="rounded-xl h-44 w-full object-cover shadow-md" />
                 </div>
             </div>
@@ -140,7 +142,7 @@
     <!-- ── STATS BAR ── -->
     <section class="relative py-24 overflow-hidden bg-sky-900">
         <div class="absolute inset-0 z-0">
-            <img src="{{ asset('assets/img/bg-image.png') }}" alt="Stats Background" class="w-full h-full object-cover">
+            <img src="{{ asset('assets/img/bg-image.webp') }}" alt="Stats Background" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-sky-900/85 backdrop-blur-[2px]"></div>
         </div>
 
@@ -321,13 +323,13 @@
                 </div>
 
                 <!-- Card 2: SOLUSI IT & ELEKTRONIK -->
-                <div class="relative group bg-white rounded-tl-[2rem] rounded-tr-[2rem] rounded-br-[2rem] p-8 border border-slate-100 shadow-xl overflow-hidden h-full"
+                <div class="relative group bg-white rounded-tl-4xl rounded-tr-4xl rounded-br-4xl p-8 border border-slate-100 shadow-xl overflow-hidden h-full"
                     data-aos="fade-up" data-aos-delay="100">
                     <div class="absolute top-0 right-0 w-2/3 h-full overflow-hidden">
-                        <img src="{{ asset('assets/img/elektronik.png') }}"
+                        <img src="{{ asset('assets/img/elektronik.webp') }}"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                             alt="IT & Elektronik">
-                        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+                        <div class="absolute inset-0 bg-linear-to-r from-white via-white/80 to-transparent"></div>
                     </div>
                     <div class="relative z-10 flex flex-col h-full">
                         <div class="flex items-center gap-4 mb-8">
@@ -345,13 +347,13 @@
                 </div>
 
                 <!-- Card 3: SOLUSI FURNITURE -->
-                <div class="relative group bg-white rounded-tl-[2rem] rounded-tr-[2rem] rounded-br-[2rem] p-8 border border-slate-100 shadow-xl overflow-hidden h-full"
+                <div class="relative group bg-white rounded-tl-4xl rounded-tr-4xl rounded-br-4xl p-8 border border-slate-100 shadow-xl overflow-hidden h-full"
                     data-aos="fade-up" data-aos-delay="200">
                     <div class="absolute top-0 right-0 w-2/3 h-full overflow-hidden">
-                        <img src="{{ asset('assets/img/furniture.png') }}"
+                        <img src="{{ asset('assets/img/layanan/furniture/furniture.webp') }}"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                             alt="Interior & Furniture">
-                        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+                        <div class="absolute inset-0 bg-linear-to-r from-white via-white/80 to-transparent"></div>
                     </div>
                     <div class="relative z-10 flex flex-col h-full">
                         <div class="flex items-center gap-4 mb-8">
@@ -380,7 +382,7 @@
 
     <!-- ── FEATURE DARK SECTION ── -->
     <section class="py-24 bg-[#0a1628] relative overflow-hidden"
-        style="background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(37,99,235,0.15) 0%, transparent 70%), linear-gradient(rgba(10, 22, 40, 0.85), rgba(10, 22, 40, 0.85)), url('{{ asset('assets/img/ac.png') }}'); background-size: cover; background-position: center;">
+        style="background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(37,99,235,0.15) 0%, transparent 70%), linear-gradient(rgba(10, 22, 40, 0.85), rgba(10, 22, 40, 0.85)), url('{{ asset('assets/img/ac.webp') }}'); background-size: cover; background-position: center;">
         <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
                 <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-sky-400 mb-3">
@@ -402,7 +404,7 @@
             <div data-aos="fade-left" class="space-y-0">
                 <div class="feature-row flex items-start gap-5 py-6">
                     <div
-                        class="w-11 h-11 rounded-xl bg-sky-900 border border-sky-800 flex items-center justify-center flex-shrink-0">
+                        class="w-11 h-11 rounded-xl bg-sky-900 border border-sky-800 flex items-center justify-center shrink-0">
                         <iconify-icon icon="solar:globus-bold-duotone" class="text-white text-xl"></iconify-icon>
                     </div>
                     <div>
@@ -412,7 +414,7 @@
                 </div>
                 <div class="feature-row flex items-start gap-5 py-6">
                     <div
-                        class="w-11 h-11 rounded-xl bg-sky-900 border border-sky-800 flex items-center justify-center flex-shrink-0">
+                        class="w-11 h-11 rounded-xl bg-sky-900 border border-sky-800 flex items-center justify-center shrink-0">
                         <iconify-icon icon="solar:diploma-verified-bold-duotone" class="text-white text-xl"></iconify-icon>
                     </div>
                     <div>
@@ -422,7 +424,7 @@
                 </div>
                 <div class="feature-row flex items-start gap-5 pt-6">
                     <div
-                        class="w-11 h-11 rounded-xl bg-sky-900 border border-sky-800 flex items-center justify-center flex-shrink-0">
+                        class="w-11 h-11 rounded-xl bg-sky-900 border border-sky-800 flex items-center justify-center shrink-0">
                         <iconify-icon icon="solar:settings-minimalistic-bold-duotone"
                             class="text-white text-xl"></iconify-icon>
                     </div>
@@ -456,10 +458,10 @@
                     data-aos="fade-up">
                     <div class="flex items-start gap-5 relative z-10">
                         <div
-                            class="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-900/20 group-hover:scale-110 transition-transform duration-500">
+                            class="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-900/20 group-hover:scale-110 transition-transform duration-500">
                             <iconify-icon icon="solar:buildings-bold-duotone" class="text-3xl md:text-4xl"></iconify-icon>
                         </div>
-                        <div class="flex-grow pt-1">
+                        <div class="grow pt-1">
                             <div class="flex items-center gap-3 mb-2">
                                 <span class="text-2xl md:text-3xl font-black text-sky-700 leading-none">01</span>
                                 <div class="w-0.5 h-8 bg-sky-600"></div>
@@ -480,10 +482,10 @@
                     data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-start gap-5 relative z-10">
                         <div
-                            class="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-900/20 group-hover:scale-110 transition-transform duration-500">
+                            class="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-900/20 group-hover:scale-110 transition-transform duration-500">
                             <iconify-icon icon="solar:widget-3-bold-duotone" class="text-3xl md:text-4xl"></iconify-icon>
                         </div>
-                        <div class="flex-grow pt-1">
+                        <div class="grow pt-1">
                             <div class="flex items-center gap-3 mb-2">
                                 <span class="text-2xl md:text-3xl font-black text-sky-700 leading-none">02</span>
                                 <div class="w-0.5 h-8 bg-sky-600"></div>
@@ -504,11 +506,11 @@
                     data-aos="fade-up">
                     <div class="flex items-start gap-5 relative z-10">
                         <div
-                            class="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-900/20 group-hover:scale-110 transition-transform duration-500">
+                            class="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-900/20 group-hover:scale-110 transition-transform duration-500">
                             <iconify-icon icon="solar:medal-ribbon-bold-duotone"
                                 class="text-3xl md:text-4xl"></iconify-icon>
                         </div>
-                        <div class="flex-grow pt-1">
+                        <div class="grow pt-1">
                             <div class="flex items-center gap-3 mb-2">
                                 <span class="text-2xl md:text-3xl font-black text-sky-700 leading-none">03</span>
                                 <div class="w-0.5 h-8 bg-sky-600"></div>
@@ -529,11 +531,11 @@
                     data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-start gap-5 relative z-10">
                         <div
-                            class="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-900/20 group-hover:scale-110 transition-transform duration-500">
+                            class="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-900/20 group-hover:scale-110 transition-transform duration-500">
                             <iconify-icon icon="solar:settings-minimalistic-bold-duotone"
                                 class="text-3xl md:text-4xl"></iconify-icon>
                         </div>
-                        <div class="flex-grow pt-1">
+                        <div class="grow pt-1">
                             <div class="flex items-center gap-3 mb-2">
                                 <span class="text-2xl md:text-3xl font-black text-sky-700 leading-none">04</span>
                                 <div class="w-0.5 h-8 bg-sky-600"></div>
@@ -554,10 +556,10 @@
                     data-aos="fade-up">
                     <div class="flex items-start gap-5 relative z-10">
                         <div
-                            class="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-900/20 group-hover:scale-110 transition-transform duration-500">
+                            class="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-900/20 group-hover:scale-110 transition-transform duration-500">
                             <iconify-icon icon="solar:globus-bold-duotone" class="text-3xl md:text-4xl"></iconify-icon>
                         </div>
-                        <div class="flex-grow pt-1">
+                        <div class="grow pt-1">
                             <div class="flex items-center gap-3 mb-2">
                                 <span class="text-2xl md:text-3xl font-black text-sky-700 leading-none">05</span>
                                 <div class="w-0.5 h-8 bg-sky-600"></div>
@@ -578,11 +580,11 @@
                     data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-start gap-5 relative z-10">
                         <div
-                            class="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-900/20 group-hover:scale-110 transition-transform duration-500">
+                            class="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-900/20 group-hover:scale-110 transition-transform duration-500">
                             <iconify-icon icon="solar:headphones-round-bold-duotone"
                                 class="text-3xl md:text-4xl"></iconify-icon>
                         </div>
-                        <div class="flex-grow pt-1">
+                        <div class="grow pt-1">
                             <div class="flex items-center gap-3 mb-2">
                                 <span class="text-2xl md:text-3xl font-black text-sky-700 leading-none">06</span>
                                 <div class="w-0.5 h-8 bg-sky-600"></div>
@@ -662,12 +664,12 @@
                 <div class="swiper swiper-left">
                     <div class="swiper-wrapper">
                         @foreach (['daikin.jpg', 'mitsubishi.svg', 'panasonic.png', 'samsung.png', 'LG.svg', 'carrier.png', 'midea.png', 'haier.png', 'hisense.png', 'gree.png', 'york.png', 'trane.png', 'aqua.png', 'polytron.png'] as $brand)
-                            <div class="swiper-slide !w-auto px-8"><img src="{{ asset('assets/img/brands/' . $brand) }}" alt=""
+                            <div class="swiper-slide w-auto! px-8"><img src="{{ asset('assets/img/brands/' . $brand) }}" alt="{{ ucfirst(explode('.', $brand)[0]) }} Logo"
                                     class="m-logo h-12 grayscale hover:grayscale-0 transition-all"></div>
                         @endforeach
                         {{-- Duplicate for seamless loop --}}
                         @foreach (['daikin.jpg', 'mitsubishi.svg', 'panasonic.png', 'samsung.png', 'LG.svg', 'carrier.png', 'midea.png', 'haier.png', 'hisense.png', 'gree.png', 'york.png', 'trane.png', 'aqua.png', 'polytron.png'] as $brand)
-                            <div class="swiper-slide !w-auto px-8"><img src="{{ asset('assets/img/brands/' . $brand) }}" alt=""
+                            <div class="swiper-slide w-auto! px-8"><img src="{{ asset('assets/img/brands/' . $brand) }}" alt="{{ ucfirst(explode('.', $brand)[0]) }} Logo"
                                     class="m-logo h-12 grayscale hover:grayscale-0 transition-all"></div>
                         @endforeach
                     </div>
@@ -681,12 +683,12 @@
                 <div class="swiper swiper-right">
                     <div class="swiper-wrapper">
                         @foreach (['asus.png', 'acer.png', 'apple.png', 'dell.png', 'hp.png', 'lenovo.png', 'msi.png', 'cisco.png', 'epson.png', 'bosch.png', 'brother.png', 'benq.png', 'philips.png', 'axioo.png', 'axis.png', 'advan.png', 'ezviz.png', 'hikvision.png', 'LG.svg', 'microvision.png', 'newline.png', 'samsung.png', 'sennheiser.png', 'toa.png', 'viewsonic.png'] as $brand)
-                            <div class="swiper-slide !w-auto px-8"><img src="{{ asset('assets/img/brands/' . $brand) }}" alt=""
+                            <div class="swiper-slide w-auto! px-8"><img src="{{ asset('assets/img/brands/' . $brand) }}" alt="{{ ucfirst(explode('.', $brand)[0]) }} Logo"
                                     class="m-logo h-10 grayscale hover:grayscale-0 transition-all"></div>
                         @endforeach
                         {{-- Duplicate --}}
                         @foreach (['asus.png', 'acer.png', 'apple.png', 'dell.png', 'hp.png', 'lenovo.png', 'msi.png', 'cisco.png', 'epson.png', 'bosch.png', 'brother.png', 'benq.png', 'philips.png', 'axioo.png', 'axis.png', 'advan.png', 'ezviz.png', 'hikvision.png', 'LG.svg', 'microvision.png', 'newline.png', 'samsung.png', 'sennheiser.png', 'toa.png', 'viewsonic.png'] as $brand)
-                            <div class="swiper-slide !w-auto px-8"><img src="{{ asset('assets/img/brands/' . $brand) }}" alt=""
+                            <div class="swiper-slide w-auto! px-8"><img src="{{ asset('assets/img/brands/' . $brand) }}" alt="{{ ucfirst(explode('.', $brand)[0]) }} Logo"
                                     class="m-logo h-10 grayscale hover:grayscale-0 transition-all"></div>
                         @endforeach
                     </div>
@@ -700,12 +702,12 @@
                 <div class="swiper swiper-left">
                     <div class="swiper-wrapper">
                         @foreach (['futura.jpg', 'chitose.webp', 'lion.png', 'indachi.png', 'donati.webp', 'chairman.webp', 'savello.avif', 'importa.png', 'expo.png', 'orbitrend.webp', 'vip.svg', 'gresco.webp', 'valmont.png', 'novin.png'] as $brand)
-                            <div class="swiper-slide !w-auto px-8"><img src="{{ asset('assets/img/brands/' . $brand) }}" alt=""
+                            <div class="swiper-slide w-auto! px-8"><img src="{{ asset('assets/img/brands/' . $brand) }}" alt="{{ ucfirst(explode('.', $brand)[0]) }} Logo"
                                     class="m-logo h-12 grayscale hover:grayscale-0 transition-all"></div>
                         @endforeach
                         {{-- Duplicate --}}
                         @foreach (['futura.jpg', 'chitose.webp', 'lion.png', 'indachi.png', 'donati.webp', 'chairman.webp', 'savello.avif', 'importa.png', 'expo.png', 'orbitrend.webp', 'vip.svg', 'gresco.webp', 'valmont.png', 'novin.png'] as $brand)
-                            <div class="swiper-slide !w-auto px-8"><img src="{{ asset('assets/img/brands/' . $brand) }}" alt=""
+                            <div class="swiper-slide w-auto! px-8"><img src="{{ asset('assets/img/brands/' . $brand) }}" alt="{{ ucfirst(explode('.', $brand)[0]) }} Logo"
                                     class="m-logo h-12 grayscale hover:grayscale-0 transition-all"></div>
                         @endforeach
                     </div>
@@ -735,7 +737,7 @@
             <div class="space-y-12 md:space-y-16">
                 <!-- Pendidikan -->
                 <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start" data-aos="fade-up">
-                    <div class="w-full lg:w-1/4 flex-shrink-0 text-center lg:text-left">
+                    <div class="w-full lg:w-1/4 shrink-0 text-center lg:text-left">
                         <div
                             class="w-16 h-16 rounded-2xl bg-sky-50 flex items-center justify-center text-sky-600 text-3xl mb-6 mx-auto lg:mx-0">
                             <iconify-icon icon="solar:globus-bold-duotone"></iconify-icon>
@@ -748,12 +750,12 @@
                     </div>
                 </div>
 
-                <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+                <div class="w-full h-px bg-linear-to-r from-transparent via-slate-200 to-transparent"></div>
 
                 <!-- Pemerintahan -->
                 <div class="flex flex-col lg:flex-row-reverse gap-8 lg:gap-16 items-center lg:items-start"
                     data-aos="fade-up">
-                    <div class="w-full lg:w-1/4 flex-shrink-0 text-center lg:text-right">
+                    <div class="w-full lg:w-1/4 shrink-0 text-center lg:text-right">
                         <div
                             class="w-16 h-16 rounded-2xl bg-sky-50 flex items-center justify-center text-sky-600 text-3xl mb-6 mx-auto lg:mx-0 lg:ml-auto">
                             <iconify-icon icon="solar:case-minimalistic-bold-duotone"></iconify-icon>
@@ -766,11 +768,11 @@
                     </div>
                 </div>
 
-                <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+                <div class="w-full h-px bg-linear-to-r from-transparent via-slate-200 to-transparent"></div>
 
                 <!-- Hospitality -->
                 <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start" data-aos="fade-up">
-                    <div class="w-full lg:w-1/4 flex-shrink-0 text-center lg:text-left">
+                    <div class="w-full lg:w-1/4 shrink-0 text-center lg:text-left">
                         <div
                             class="w-16 h-16 rounded-2xl bg-sky-50 flex items-center justify-center text-sky-600 text-3xl mb-6 mx-auto lg:mx-0">
                             <iconify-icon icon="solar:bed-bold-duotone"></iconify-icon>

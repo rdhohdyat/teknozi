@@ -1,6 +1,8 @@
 @extends('layouts.tzi')
 
-@section('title', 'Layanan - PT Teknokrat Zamrud Integrasi')
+@section('title', __('Layanan - PT Teknokrat Zamrud Integrasi'))
+@section('meta_description', __('Jelajahi layanan profesional dari PT Teknokrat Zamrud Integrasi, mulai dari Instalasi Sistem IT & Elektronika, Jasa HVAC (AC/Pendingin), hingga Desain Interior dan Pengadaan Furnitur Kantor berkualitas.'))
+@section('meta_keywords', __('layanan instalasi IT, jasa AC pekanbaru, jasa HVAC pekanbaru, layanan desain interior, instalasi cctv pekanbaru, kontraktor mekanikal elektrikal riau'))
 
 @section('content')
     <!-- ── PAGE HERO ── -->
@@ -98,7 +100,7 @@
                         $acBrands = ['daikin.jpg', 'mitsubishi.svg', 'panasonic.png', 'samsung.png', 'LG.svg', 'carrier.png', 'midea.png', 'haier.png', 'hisense.png', 'gree.png', 'york.png', 'trane.png', 'aqua.png', 'polytron.png'];
                     @endphp
                     @foreach ($acBrands as $brand)
-                        <img src="{{ asset('assets/img/brands/' . $brand) }}" alt="" class="h-6 md:h-8 w-auto object-contain">
+                        <img src="{{ asset('assets/img/brands/' . $brand) }}" alt="{{ ucfirst(explode('.', $brand)[0]) }} Logo" class="h-6 md:h-8 w-auto object-contain">
                     @endforeach
                 </div>
             </div>
@@ -175,7 +177,7 @@
                         $itBrands = ['asus.png', 'acer.png', 'apple.png', 'dell.png', 'hp.png', 'lenovo.png', 'msi.png', 'cisco.png', 'epson.png', 'bosch.png', 'brother.png', 'benq.png', 'philips.png', 'axioo.png', 'axis.png', 'advan.png', 'ezviz.png', 'hikvision.png', 'LG.svg', 'microvision.png', 'newline.png', 'samsung.png', 'sennheiser.png', 'toa.png', 'viewsonic.png'];
                     @endphp
                     @foreach ($itBrands as $brand)
-                        <img src="{{ asset('assets/img/brands/' . $brand) }}" alt="" class="h-5 md:h-6 w-auto object-contain">
+                        <img src="{{ asset('assets/img/brands/' . $brand) }}" alt="{{ ucfirst(explode('.', $brand)[0]) }} Logo" class="h-5 md:h-6 w-auto object-contain">
                     @endforeach
                 </div>
             </div>
@@ -244,7 +246,7 @@
                         $furnitureBrands = ['futura.jpg', 'chitose.webp', 'lion.png', 'indachi.png', 'donati.webp', 'chairman.webp', 'savello.avif', 'importa.png', 'expo.png', 'orbitrend.webp', 'vip.svg', 'gresco.webp', 'valmont.png', 'novin.png'];
                     @endphp
                     @foreach ($furnitureBrands as $brand)
-                        <img src="{{ asset('assets/img/brands/' . $brand) }}" alt="" class="h-5 md:h-6 w-auto object-contain">
+                        <img src="{{ asset('assets/img/brands/' . $brand) }}" alt="{{ ucfirst(explode('.', $brand)[0]) }} Logo" class="h-5 md:h-6 w-auto object-contain">
                     @endforeach
                 </div>
             </div>
@@ -384,38 +386,91 @@
 
 @push('scripts')
     <script>
-        // Client Data Implementation
-        const educationClients = [
-            "Universitas Riau", "UIN Suska Riau", "Universitas Muhammadiyah Riau",
-            "Politeknik Negeri Bengkalis", "STIE Indragiri", "Universitas Pahlawan",
-            "Universitas Islam Riau", "Politeknik Caltex Riau"
+        // Client Logos Data
+        const eduClients = [
+            { name: "Politeknik Negeri Bengkalis", abbr: "PNB", url: "{{ asset('assets/img/clients/pnb.png') }}" },
+            { name: "Politeknik Caltex Riau", abbr: "PCR", url: "{{ asset('assets/img/clients/pcr.png') }}" },
+            { name: "Universitas Riau", abbr: "UNRI", url: "{{ asset('assets/img/clients/unri.png') }}" },
+            { name: "Universitas Islam Riau", abbr: "UIR", url: "{{ asset('assets/img/clients/uir.png') }}" },
+            { name: "UIN Sultan Syarif Kasim", abbr: "UIN", url: "{{ asset('assets/img/clients/uin.png') }}" },
+            { name: "Universitas Andalas", abbr: "UNAND", url: "{{ asset('assets/img/clients/unand.png') }}" },
+            { name: "Universitas Negeri Padang", abbr: "UNP", url: "{{ asset('assets/img/clients/unp.png') }}" },
+            { name: "UNISI Kuantan Singingi", abbr: "UNISI", url: "{{ asset('assets/img/clients/unisi.png') }}" },
+            { name: "Univ. Maritim Raja Ali Haji", abbr: "UMRAH", url: "{{ asset('assets/img/clients/umrah.png') }}" },
+            { name: "IAIN Sultan Abdurrahman", abbr: "IAIN", url: "{{ asset('assets/img/clients/iain.webp') }}" },
+            { name: "Universitas Lancang Kuning", abbr: "UNILAK", url: "{{ asset('assets/img/clients/unilak.png') }}" },
+            { name: "Universitas AwalBros", abbr: "UAB", url: "{{ asset('assets/img/clients/uab.png') }}" },
         ];
 
-        const governmentClients = [
-            "Kementerian Agama RI", "Kementerian Keuangan RI", "Pemerintah Provinsi Riau",
-            "Dinas Pendidikan Riau", "Dinas Kesehatan Riau", "Sekretariat Daerah",
-            "Bappeda Riau", "DPRD Provinsi Riau"
+        const govClients = [
+            { name: "Kementrian Pendidikan Tinggi", abbr: "DIKTI", url: "{{ asset('assets/img/clients/dikti.png') }}" },
+            { name: "Kementrian Agama", abbr: "KEMENAG", url: "{{ asset('assets/img/clients/kemenag.png') }}" },
+            { name: "Kejaksaan Agung", abbr: "KEJAGUNG", url: "{{ asset('assets/img/clients/kejagung.png') }}" },
+            { name: "Kejaksaan Tinggi Riau", abbr: "KEJATI", url: "{{ asset('assets/img/clients/kejatiri.png') }}" },
+            { name: "Pengadilan Tinggi Kepri", abbr: "PT KEPRI", url: "{{ asset('assets/img/clients/ptkepri.png') }}" },
+            { name: "PTA Pekanbaru", abbr: "PTA PKU", url: "{{ asset('assets/img/clients/ptapku.png') }}" },
+            { name: "PTA Kepulauan Riau", abbr: "PTA KEPRI", url: "{{ asset('assets/img/clients/ptakepri.png') }}" },
+            { name: "Dinas PU Provinsi Riau", abbr: "PUPR RIAU", url: "{{ asset('assets/img/clients/pupr.png') }}" },
+            { name: "Dinas PU Kepri", abbr: "PU KEPRI", url: "{{ asset('assets/img/clients/pukepri.png') }}" },
+            { name: "Ditjen Pajak", abbr: "DJP", url: "{{ asset('assets/img/clients/djp.svg') }}" },
+            { name: "Kementrian Perhubungan", abbr: "KEMENHUB", url: "{{ asset('assets/img/clients/kemenhub.png') }}" },
+            { name: "Kementrian BKKBN", abbr: "BKKBN", url: "{{ asset('assets/img/clients/bkkbn.png') }}" },
+            { name: "BVP & Produktivitas", abbr: "BVP", url: "{{ asset('assets/img/clients/bvp.webp') }}" },
+            { name: "Kementrian Kesehatan", abbr: "KEMENKES", url: "{{ asset('assets/img/clients/kemenkes.png') }}" },
+            { name: "Angkasa Pura", abbr: "AP", url: "{{ asset('assets/img/clients/angkasapura.png') }}" },
+            { name: "Agrinas Palm Nusantara", abbr: "AGRINAS", url: "{{ asset('assets/img/clients/agrinas.png') }}" },
+            { name: "Telkomsel", abbr: "TSEL", url: "{{ asset('assets/img/clients/telkomsel.png') }}" },
         ];
 
-        const hospitalityClients = [
-            "Labersa Grand Hotel", "The Premiere Hotel", "RSUD Arifin Achmad",
-            "RS Prima Pekanbaru", "RS Eka Hospital", "Grand Zuri Hotel",
-            "Swiss-Belinn Pekanbaru", "Aulia Hospital"
+        const hospClients = [
+            { name: "Cititel Group", abbr: "CITITEL", url: "{{ asset('assets/img/clients/cititel.webp') }}" },
+            { name: "Hotel New Hollywood", abbr: "NEW HWD", url: "{{ asset('assets/img/clients/newhwd.jpg') }}" },
+            { name: "Swissbell in Hotel", abbr: "SWISSBELL", url: "{{ asset('assets/img/clients/swissbell.png') }}" },
+            { name: "Prime Park Hotel", abbr: "PRIME PARK", url: "{{ asset('assets/img/clients/primepark.png') }}" },
+            { name: "Archipelago Hotel Group", abbr: "ARCHIPELAGO", url: "{{ asset('assets/img/clients/archipelago.jpg') }}" },
+            { name: "RS AwalBros", abbr: "AWALBROS", url: "{{ asset('assets/img/clients/awalbros.png') }}" },
+            { name: "RSIA Andini", abbr: "ANDINI", url: "{{ asset('assets/img/clients/rsia.png') }}" },
+            { name: "Aulia Hospital", abbr: "AULIA", url: "{{ asset('assets/img/clients/auliahospital.png') }}" },
+            { name: "RS Prima", abbr: "RS PRIMA", url: "{{ asset('assets/img/clients/rsprima.png') }}" },
         ];
 
-        function renderGrid(containerId, clients) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            clients.forEach(client => {
-                const badge = document.createElement('div');
-                badge.className = "px-5 py-3 bg-slate-50 border border-slate-100 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest text-slate-700 hover:bg-sky-600 hover:text-white hover:border-sky-600 transition-all cursor-default shadow-sm";
-                badge.innerText = client;
-                container.appendChild(badge);
+        function renderClientGrid(data, containerId) {
+            const grid = document.getElementById(containerId);
+            if (!grid) return;
+            data.forEach(item => {
+                const wrap = document.createElement('div');
+                wrap.className = 'group flex items-center gap-3 bg-white border border-slate-200 pr-5 pl-2 py-2 rounded-full hover:border-sky-400 hover:shadow-md hover:shadow-sky-100 transition-all duration-300 cursor-pointer hover:-translate-y-1';
+                wrap.title = item.name;
+
+                const box = document.createElement('div');
+                box.className = 'w-10 h-10 rounded-full bg-slate-50 flex-shrink-0 flex items-center justify-center p-1.5 border border-slate-100 group-hover:bg-white group-hover:border-sky-100 transition-colors';
+
+                if (item.url) {
+                    const img = document.createElement('img');
+                    img.src = item.url;
+                    img.alt = item.name;
+                    img.loading = 'lazy';
+                    img.className = 'max-w-full max-h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300';
+                    img.onerror = function () {
+                        box.innerHTML = `<span class="text-[10px] font-black text-slate-400 text-center leading-tight">${item.abbr}</span>`;
+                    };
+                    box.appendChild(img);
+                } else {
+                    box.innerHTML = `<span class="text-[10px] font-black text-slate-400 text-center leading-tight">${item.abbr}</span>`;
+                }
+
+                const label = document.createElement('span');
+                label.className = 'text-xs font-bold text-slate-600 group-hover:text-sky-600 transition-colors max-w-[140px] truncate';
+                label.textContent = item.name;
+
+                wrap.appendChild(box);
+                wrap.appendChild(label);
+                grid.appendChild(wrap);
             });
         }
 
-        renderGrid('edu-grid', educationClients);
-        renderGrid('gov-grid', governmentClients);
-        renderGrid('hosp-grid', hospitalityClients);
+        renderClientGrid(eduClients, 'edu-grid');
+        renderClientGrid(govClients, 'gov-grid');
+        renderClientGrid(hospClients, 'hosp-grid');
     </script>
 @endpush

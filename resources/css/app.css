@@ -5,7 +5,174 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+@layer base {
+    body {
+        font-family: 'Fira Sans', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: 'Barlow Condensed', sans-serif;
+    }
+}
+
+.hero-bg {
+    position: relative;
+    background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('../../public/assets/img/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.service-bg {
+    position: relative;
+    background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('../../public/assets/img/service-hero.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-bg {
+    position: relative;
+    background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('../../public/assets/img/bg-image.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-bg {
+    position: relative;
+    background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('../../public/assets/img/contact_hero.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.product-bg {
+    position: relative;
+    background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('../../public/assets/img/products-hero.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-tzi {
+    position: relative;
+    background: linear-gradient(to right, rgba(10, 22, 40, 0.95) 30%, rgba(10, 22, 40, 0.4) 60%, rgba(10, 22, 40, 0.2) 100%), url('../../public/assets/img/bg-image.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.custom-shape-divider-bottom-1715243168 {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1715243168 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+}
+
+.custom-shape-divider-bottom-1715243168 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.18);
+    border-color: #3b82f6;
+}
+
+.service-card:hover .card-img {
+    transform: scale(1.07);
+}
+
+.card-img {
+    transition: transform 0.5s ease;
+}
+
+.why-card {
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.why-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.14);
+    transform: translateY(-4px);
+}
+
+.btn-transition {
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.btn-transition:hover {
+    transform: translateY(-2px);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3b99f6;
+    transition: width 0.25s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.read-more {
+    transition: gap 0.2s, color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.read-more:hover {
+    gap: 10px;
+    color: #1d4ed8;
+}
+
+.feature-row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.feature-row:last-child {
+    border-bottom: none;
+}
+
+.custom-shape-divider-top-1715243168 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1715243168 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+.custom-shape-divider-top-1715243168 .shape-fill {
+    fill: #FFFFFF;
 }

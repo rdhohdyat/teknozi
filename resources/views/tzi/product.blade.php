@@ -1,6 +1,8 @@
 @extends('layouts.tzi')
 
-@section('title', 'Katalog Produk - PT Teknokrat Zamrud Integrasi')
+@section('title', __('Katalog Produk - PT Teknokrat Zamrud Integrasi'))
+@section('meta_description', __('Lihat katalog lengkap produk dan pengadaan barang dari PT Teknokrat Zamrud Integrasi. Kami melayani pengadaan perangkat IT, Elektronika, Furnitur Kantor, hingga Alat Tulis Kantor (ATK) dengan standar tinggi.'))
+@section('meta_keywords', __('katalog produk teknokrat zamrud, supplier alat tulis kantor pekanbaru, pengadaan komputer pekanbaru, supplier meja kantor, pengadaan barang dan jasa riau'))
 
 @section('content')
     <!-- ── PAGE HERO ── -->
@@ -53,7 +55,7 @@
 
             <div class="flex flex-col lg:flex-row gap-10">
                 <!-- Sidebar Categories -->
-                <aside class="w-full lg:w-72 flex-shrink-0" data-aos="fade-right">
+                <aside class="w-full lg:w-72 shrink-0" data-aos="fade-right">
                     <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-sky-600 mb-6 ml-2">{{ __('Kategori (KBLI)') }}</p>
                     <nav class="space-y-2">
                         @php
@@ -78,7 +80,7 @@
                 </aside>
 
                 <!-- Product Grid -->
-                <div class="flex-grow">
+                <div class="grow">
                     <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                         @php
                             $products = [
@@ -137,7 +139,7 @@
                         @foreach ($products as $index => $product)
                             <div class="product-item product-card bg-white rounded-3xl overflow-hidden flex flex-col h-full"
                                 data-category="{{ $product['category'] }}" data-aos="fade-up" data-aos-delay="{{ $index * 100 }}">
-                                <div class="relative aspect-[4/3] overflow-hidden">
+                                <div class="relative aspect-4/3 overflow-hidden">
                                     <img src="{{ $product['img'] }}" alt="{{ $product['title'] }}" class="w-full h-full object-cover">
                                     @if(isset($product['featured']) && $product['featured'])
                                         <div class="absolute top-4 left-4">
@@ -145,10 +147,10 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="p-6 flex flex-col flex-grow">
+                                <div class="p-6 flex flex-col grow">
                                     <p class="text-sky-500 text-[10px] font-bold mb-2">{{ $product['kbli'] }}</p>
                                     <h3 class="text-xl font-black text-slate-900 mb-2 uppercase">{{ $product['title'] }}</h3>
-                                    <p class="text-slate-500 text-xs leading-relaxed mb-6 flex-grow">
+                                    <p class="text-slate-500 text-xs leading-relaxed mb-6 grow">
                                         {{ $product['desc'] }}
                                     </p>
                                     <a href="{{ route('tzi.product-detail', ['slug' => $product['id']]) }}"
@@ -187,8 +189,8 @@
                             $acBrands = ['daikin.jpg', 'mitsubishi.svg', 'panasonic.png', 'samsung.png', 'LG.svg', 'carrier.png', 'midea.png', 'haier.png', 'hisense.png', 'gree.png', 'york.png', 'trane.png', 'aqua.png', 'polytron.png'];
                         @endphp
                         @foreach(array_merge($acBrands, $acBrands) as $brand)
-                            <div class="swiper-slide !w-auto px-8">
-                                <img src="{{ asset('assets/img/brands/' . $brand) }}" alt="" class="m-logo h-12 grayscale hover:grayscale-0 transition-all">
+                            <div class="swiper-slide w-auto! px-8">
+                                <img src="{{ asset('assets/img/brands/' . $brand) }}" alt="{{ ucfirst(explode('.', $brand)[0]) }} Logo" class="m-logo h-12 grayscale hover:grayscale-0 transition-all">
                             </div>
                         @endforeach
                     </div>
@@ -204,8 +206,8 @@
                             $itBrands = ['asus.png', 'acer.png', 'apple.png', 'dell.png', 'hp.png', 'lenovo.png', 'msi.png', 'cisco.png', 'epson.png', 'bosch.png', 'brother.png', 'benq.png', 'philips.png', 'axioo.png', 'axis.png', 'advan.png', 'ezviz.png', 'hikvision.png', 'LG.svg', 'microvision.png', 'newline.png', 'samsung.png', 'sennheiser.png', 'toa.png', 'viewsonic.png'];
                         @endphp
                         @foreach(array_merge($itBrands, $itBrands) as $brand)
-                            <div class="swiper-slide !w-auto px-8">
-                                <img src="{{ asset('assets/img/brands/' . $brand) }}" alt="" class="m-logo h-10 grayscale hover:grayscale-0 transition-all">
+                            <div class="swiper-slide w-auto! px-8">
+                                <img src="{{ asset('assets/img/brands/' . $brand) }}" alt="{{ ucfirst(explode('.', $brand)[0]) }} Logo" class="m-logo h-10 grayscale hover:grayscale-0 transition-all">
                             </div>
                         @endforeach
                     </div>
@@ -221,8 +223,8 @@
                             $furnitureBrands = ['futura.jpg', 'chitose.webp', 'lion.png', 'indachi.png', 'donati.webp', 'chairman.webp', 'savello.avif', 'importa.png', 'expo.png', 'orbitrend.webp', 'vip.svg', 'gresco.webp', 'valmont.png', 'novin.png'];
                         @endphp
                         @foreach(array_merge($furnitureBrands, $furnitureBrands) as $brand)
-                            <div class="swiper-slide !w-auto px-8">
-                                <img src="{{ asset('assets/img/brands/' . $brand) }}" alt="" class="m-logo h-12 grayscale hover:grayscale-0 transition-all">
+                            <div class="swiper-slide w-auto! px-8">
+                                <img src="{{ asset('assets/img/brands/' . $brand) }}" alt="{{ ucfirst(explode('.', $brand)[0]) }} Logo" class="m-logo h-12 grayscale hover:grayscale-0 transition-all">
                             </div>
                         @endforeach
                     </div>

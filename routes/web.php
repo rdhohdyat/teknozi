@@ -32,3 +32,7 @@ Route::get('lang/{locale}', function ($locale) {
     }
     return redirect()->back();
 })->name('lang.switch');
+
+Route::get('/sitemap.xml', function () {
+    return response()->view('tzi.sitemap')->header('Content-Type', 'text/xml');
+});

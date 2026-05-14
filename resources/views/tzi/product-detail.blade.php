@@ -107,6 +107,9 @@
 @endphp
 
 @section('title', $product['title'] . ' - PT Teknokrat Zamrud Integrasi')
+@section('meta_description', $product['description'])
+@section('meta_keywords', strtolower($product['title']) . ', pengadaan barang pekanbaru, pt teknokrat zamrud integrasi, katalog produk')
+@section('og_image', $product['image'])
 
 @section('content')
     <!-- ── PAGE HERO ── -->

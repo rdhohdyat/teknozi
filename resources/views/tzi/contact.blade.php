@@ -1,6 +1,8 @@
 @extends('layouts.tzi')
 
-@section('title', 'Kontak - PT Teknokrat Zamrud Integrasi')
+@section('title', __('Kontak - PT Teknokrat Zamrud Integrasi'))
+@section('meta_description', __('Hubungi PT Teknokrat Zamrud Integrasi hari ini untuk konsultasi dan solusi bisnis Anda. Kami siap melayani kebutuhan IT, Elektronika, HVAC, dan Interior Kantor di wilayah Pekanbaru dan sekitarnya.'))
+@section('meta_keywords', __('kontak teknokrat zamrud integrasi, alamat teknokrat zamrud, nomor telepon teknokrat zamrud, email pt teknokrat zamrud, hubungi kontraktor pekanbaru'))
 
 @section('content')
     <!-- ── PAGE HERO ── -->
@@ -95,35 +97,35 @@
                     data-aos="fade-left">
                     <h2 class="text-2xl md:text-3xl font-black uppercase text-slate-900 mb-6 md:mb-8">{{ __('Kirim') }} <span
                             class="text-sky-600">{{ __('Pesan') }}</span></h2>
-                    <form action="#" class="grid md:grid-cols-2 gap-4 md:gap-6">
+                    <form id="contactFormEmail" action="#" class="grid md:grid-cols-2 gap-4 md:gap-6">
                         <div class="space-y-1.5 md:space-y-2">
                             <label
                                 class="text-[9px] md:text-[10px] uppercase tracking-widest font-bold text-slate-400 ml-1">{{ __('Nama Lengkap') }}</label>
-                            <input type="text" placeholder="{{ __('Masukkan nama Anda') }}"
+                            <input type="text" id="contactName" placeholder="{{ __('Masukkan nama Anda') }}" required
                                 class="w-full bg-white border border-slate-200 p-3.5 md:p-4 rounded-xl text-sm input-focus">
                         </div>
                         <div class="space-y-1.5 md:space-y-2">
                             <label
                                 class="text-[9px] md:text-[10px] uppercase tracking-widest font-bold text-slate-400 ml-1">{{ __('Alamat Email') }}</label>
-                            <input type="email" placeholder="email@perusahaan.com"
+                            <input type="email" id="contactEmail" placeholder="email@perusahaan.com" required
                                 class="w-full bg-white border border-slate-200 p-3.5 md:p-4 rounded-xl text-sm input-focus">
                         </div>
                         <div class="space-y-1.5 md:space-y-2 md:col-span-2">
                             <label
                                 class="text-[9px] md:text-[10px] uppercase tracking-widest font-bold text-slate-400 ml-1">{{ __('Subjek Pesan') }}</label>
-                            <input type="text" placeholder="{{ __('Apa yang bisa kami bantu?') }}"
+                            <input type="text" id="contactSubject" placeholder="{{ __('Apa yang bisa kami bantu?') }}" required
                                 class="w-full bg-white border border-slate-200 p-3.5 md:p-4 rounded-xl text-sm input-focus">
                         </div>
                         <div class="space-y-1.5 md:space-y-2 md:col-span-2">
                             <label
                                 class="text-[9px] md:text-[10px] uppercase tracking-widest font-bold text-slate-400 ml-1">{{ __('Isi Pesan') }}</label>
-                            <textarea rows="4" placeholder="{{ __('Tuliskan pesan Anda di sini...') }}"
+                            <textarea id="contactMessage" rows="4" placeholder="{{ __('Tuliskan pesan Anda di sini...') }}" required
                                 class="w-full bg-white border border-slate-200 p-3.5 md:p-4 rounded-xl text-sm input-focus resize-none"></textarea>
                         </div>
                         <div class="md:col-span-2 pt-2 md:pt-4">
                             <button type="submit"
                                 class="btn-transition w-full bg-sky-600 hover:bg-sky-700 text-white font-bold uppercase tracking-widest py-3.5 md:py-4 rounded-xl shadow-xl shadow-sky-900/20">
-                                {{ __('Kirim Pesan Sekarang') }}
+                                {{ __('Kirim Via Email') }}
                             </button>
                         </div>
                     </form>
@@ -143,4 +145,31 @@
             outline: none;
         }
     </style>
+
+    @push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactFormEmail');
+            if(form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('contactName').value;
+                    const email = document.getElementById('contactEmail').value;
+                    const subject = document.getElementById('contactSubject').value;
+                    const message = document.getElementById('contactMessage').value;
+                    
+                    const emailTo = "admin@teknokratzamrud.com";
+                    
+                    // Format isi body email
+                    const emailBody = `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`;
+                    
+                    // Buat link dan buka Web Gmail di tab baru
+                    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailTo}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+                    window.open(gmailUrl, '_blank');
+                });
+            }
+        });
+    </script>
+    @endpush
 @endsection
